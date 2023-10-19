@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './Relogio.css';
 
 function Relogio() {
@@ -9,7 +10,11 @@ function Relogio() {
 
     
       // Atualiza a hora a cada segundo
-      setInterval(updateTime, 1000);
+      useEffect(() => {
+        let intervalId = setInterval(updateTime, 1000);
+
+        return () => clearInterval(intervalId);
+      }, [])
     
     
     
