@@ -10,10 +10,13 @@ const Home = () => {
                         <Link to="/Atv01">Atividade 01 - Relógio e Letreiro</Link>
                     </li>
                     <li>
-                        <Link to="/Atv02">Atividade 02</Link>
+                        <Link to="/Atv02">Atividade 02 - Botão</Link>
                     </li>
                     <li>
-                        <Link to="/Atv03">Atividade 03</Link>
+                        <Link to="/Atv03">Atividade 03 - Avatar</Link>
+                    </li>
+                    <li>
+                        <Link to="/Atv04">Atividade 04 - Renderização de Lista</Link>
                     </li>
                 </ul>
             </nav>
