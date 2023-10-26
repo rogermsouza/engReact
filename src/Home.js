@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return(
         <div>
+            <h1>Atividades em aula - React</h1>
+            <h3>Fatec Presidente Prudente</h3>
+            <h4>Análise e Desenvolvimento de Sistemas</h4>
+            <hr></hr>
             <nav>
                 <ul>
                     <li>
