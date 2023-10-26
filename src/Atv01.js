@@ -8,7 +8,8 @@ export default function Atv01(){
             <h1>Atividade 01</h1>
             
             <Relogio />
-            <Letreiro />
+            <div className="letreiro"><Letreiro /></div>
+            
         
         </div>
     );
