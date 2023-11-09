@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 
+const avatar = "https://www.cinemascomics.com/wp-content/uploads/2020/12/tony-stark-iron-man-vengadores-endgame.jpg";
+const descricao = "Tony Stark";
+const titulo = "Tony Stark - Personagem Filme"
 export function Profile(){
     return (
         <img 
-            src="https://www.cinemascomics.com/wp-content/uploads/2020/12/tony-stark-iron-man-vengadores-endgame.jpg"
-            alt="Tony Stark"
-            title="Tony Stark"
+            src={avatar}
+            alt={descricao}
+            title={titulo}
             width={300}
         />
     );
