@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 
 import Botao from './Botao';
 
-export default function ContComp({frase}) {
+export default function ContComp({frase, setCountas}) {
     const [count, setCount] = useState(0);
     function handleClickMais() {
         setCount(count + 1);
+        setCountas((atual) => (atual + 1));
     }
     function handleClickMenos() {
         
         if(count >0){
             setCount(count - 1);
+            setCountas((atual) => (atual - 1));
         }
     }
 
