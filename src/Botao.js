@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-function Botao(){
+function Botao({ onClick, name }){
     return (
-        <button>Aqui está o botão</button>
+        <button onClick={onClick}>{name}</button>
     );
 }
 
