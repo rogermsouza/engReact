@@ -14,20 +14,17 @@ const Home = () => {
                         <Link to="/Atv01">Atividade 01 - Relógio e Letreiro</Link>
                     </li>
                     <li>
-                        <Link to="/Atv02">Atividade 02 - Botão</Link>
+                        <Link to="/Atv03">Atividade 02 - Avatar</Link>
                     </li>
                     <li>
-                        <Link to="/Atv03">Atividade 03 - Avatar</Link>
-                    </li>
-                    <li>
-                        <Link to="/Atv04">Atividade 04 - Renderização de Lista</Link>
+                        <Link to="/Atv04">Atividade 03 - Renderização de Lista</Link>
                     </li>
                     
                     <li>
-                        <Link to="/Atv05">Atividade 05 - Contador compartilhado</Link>
+                        <Link to="/Atv05">Atividade 04 - Contador compartilhado</Link>
                     </li>
                     <li>
-                        <Link to="/Atv06">Atividade 06 - Componentes</Link>
+                        <Link to="/Atv06">Atividade 05 - Componentes</Link>
                     </li>
                 </ul>
             </nav>
