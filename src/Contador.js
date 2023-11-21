@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+import adicionar from './img/add.PNG';
+import remover from './img/remov.PNG';
+import homem from './img/homem.PNG';
+
+
 
 
 import Botao from './Botao';
@@ -20,12 +25,18 @@ export default function ContComp({frase, setCountas}) {
 
     return (
         <div>
-            <div>
-                
-            <h2>{frase}: {count}</h2>
-            <Botao onClick={handleClickMais} name="Adiciona"/>
-            <Botao onClick={handleClickMenos} name="Remove" />
+            
+            
+            <div className='legendasBot'>
+                <div className='botoes'>
+            <img src={adicionar} onClick={handleClickMais} name="Adiciona" className='botAdiciona' />
+            <img src={remover} onClick={handleClickMenos} name="Remove" className='botRemove' />
+            </div>    
+                <h2>{frase}</h2>
+                <h3>{count}</h3>
             </div>
+            
+            
         </div>
     );
 }
