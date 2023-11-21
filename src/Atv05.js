@@ -11,7 +11,10 @@ import ContComp from './Contador';
 
 export default function Contador(){
     const [count, setCount] = useState(0);
-    return  <div className="corpoCont">
+    return <div className="corpo">
+        <div className="separador"></div>
+
+<div className="corpoCont">
         <Link to="/">Voltar</Link>
         <div>
             <div>
@@ -38,6 +41,11 @@ export default function Contador(){
         
         </div>
        
+    </div>
+
+
+
+
     </div>
     
 }
