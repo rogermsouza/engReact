@@ -8,7 +8,7 @@ export function Calc() {
             </div>
             <div className="teclas">
                 <div className="base1">
-                    <button>C</button>
+                    <button className="clearBot">C</button>
                     <button>()</button>
                     <button>%</button>
 

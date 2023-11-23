@@ -2,6 +2,7 @@
     width: 330px;
     margin: 0 auto;
     border: solid 1px #000;
+    font-family: monospace;
 }
 
 .visor{
@@ -27,12 +28,16 @@
     justify-content: center;
 }
 
+.clearBot{
+    color: red;
+}
 
 .base2 button{
     width: 100%;;
 }
 
 button{
+    font-family:monospace;
     width: auto;
     margin: 4px;
     padding: 18px 20px;
