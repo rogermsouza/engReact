@@ -4,9 +4,17 @@
     border: solid 1px #000;
     font-family: monospace;
 }
+h1 {
+    margin: 0;
+    padding: 0;
+}
 
 .visor{
     border: solid 1px red;
+    display: flex;
+    justify-content: end;
+    padding: 10px 15px 10px 15px;
+    font-size: 2em;
 }
 
 .teclas {
