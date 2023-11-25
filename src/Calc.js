@@ -7,17 +7,23 @@ export function Calc() {
 
     function addNun(valor) {
         var inputnum = valor.target.value;
-
-        if (num === 0) {
-            setNun(inputnum);
+    
+        if (num === 0 || num === "0") {
+            setNun(parseFloat(inputnum));
         } else {
-            setNun(num + inputnum);
+            setNun(parseFloat(num.toString() + inputnum));
         }
     }
+    
+    
 
-    function c(num) {
+
+    function c() {
         setNun(0);
+        setPrevNun(0);
+        setOperador(null);
     }
+    
     function porcentagem() {
         setNun(num / 100);
     }
@@ -39,13 +45,13 @@ export function Calc() {
 
     function calcular() {
         if (inpoperador === '/') {            
-            setNun((prevnum / parseFloat(num)).toFixed(2));
+            setNun((prevnum / parseFloat(num)).toFixed(3));
         } else if (inpoperador === '*') {
-            setNun((prevnum * parseFloat(num)).toFixed(2));
+            setNun((prevnum * parseFloat(num)).toFixed(3));
         } else if (inpoperador === '+') {
-            setNun((parseFloat(prevnum) + parseFloat(num)).toFixed(2));
+            setNun((parseFloat(prevnum) + parseFloat(num)).toFixed(3));
         } else if (inpoperador === '-') {
-            setNun((prevnum - parseFloat(num)).toFixed(2));
+            setNun((prevnum - parseFloat(num)).toFixed(3));
         }
     
         setOperador(null);
