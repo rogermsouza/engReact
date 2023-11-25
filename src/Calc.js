@@ -1,95 +1,89 @@
 import { useState } from "react";
 
 export function Calc() {
-    const [num, setNun] = useState(0);
-    const [prevnum, setPrevNun] = useState(0);
-    const [inpoperador, setOperador] = useState();
+  const [num, setNum] = useState(0);
+  const [prevNum, setPrevNum] = useState(0);
+  const [inpoperador, setOperador] = useState();
 
-    function addNun(valor) {
-        var inputnum = valor.target.value;
-    
-        if (num === 0 || num === "0") {
-            setNun(parseFloat(inputnum));
-        } else {
-            setNun(parseFloat(num.toString() + inputnum));
-        }
-    }
-    
-    
+  function addNum(valor) {
+    const inputNum = valor.target.value;
 
+    if (num === 0 || isNaN(num) && inputNum !== "0") {
+      setNum(inputNum);
+    } else {
+      setNum(num + inputNum);
+    }
+  }
 
-    function c() {
-        setNun(0);
-        setPrevNun(0);
-        setOperador(null);
+  function c(num) {
+    setNum(0);
+  }
+  function porcentagem() {
+    setNum(num / 100);
+  }
+  function mudaConta() {
+    if (num > 0) {
+      setNum(-num);
     }
-    
-    function porcentagem() {
-        setNun(num / 100);
-    }
-    function mudaConta() {
-        if (num > 0) {
-            setNun(-num);
-        }
-        else {
-            setNun(-(num));
-        }
-
-    }
-    function operador(op) {
-        var inpOperador = op.target.value;
-        setOperador(inpOperador);
-        setPrevNun(num);
-        setNun(0);
+    else {
+      setNum(-(num));
     }
 
-    function calcular() {
-        if (inpoperador === '/') {            
-            setNun((prevnum / parseFloat(num)).toFixed(3));
-        } else if (inpoperador === '*') {
-            setNun((prevnum * parseFloat(num)).toFixed(3));
-        } else if (inpoperador === '+') {
-            setNun((parseFloat(prevnum) + parseFloat(num)).toFixed(3));
-        } else if (inpoperador === '-') {
-            setNun((prevnum - parseFloat(num)).toFixed(3));
-        }
-    
-        setOperador(null);
-        setPrevNun(0);
+  }
+  function operador(op) {
+    var inpOperador = op.target.value;
+    setOperador(inpOperador);
+    setPrevNum(num);
+    setNum(0);
+  }
+
+  function calcular() {
+    if (inpoperador === "/") {
+      setNum((prevNum / parseFloat(num)).toFixed(2));
+    } else if (inpoperador === "*") {
+      setNum((prevNum * parseFloat(num)).toFixed(2));
+    } else if (inpoperador === "+") {
+      setNum((parseFloat(prevNum) + parseFloat(num)).toFixed(2));
+    } else if (inpoperador === "-") {
+      setNum((prevNum - parseFloat(num)).toFixed(2));
     }
-    return (
-        <div className="body">
-            <div className="visor">
-                <h1>{num}</h1>
-            </div>
-            <div className="teclas">
-                <div className="base1">
-                    <button className="clearBot" onClick={c}>C</button>
-                    <button className="corrigeElem" onClick={porcentagem}>%</button>
-                    <button onClick={operador} value='/'>/</button>
-                    <button value={7}  onClick={addNun}>7</button>
-                    <button value={8}  onClick={addNun}>8</button>
-                    <button value={9}  onClick={addNun}>9</button>
 
-                    <button onClick={operador} value='*'>X</button>
-                    <button value={4}  onClick={addNun}>4</button>
-                    <button value={5}  onClick={addNun}>5</button>
-                    <button value={6}  onClick={addNun}>6</button>
+    setOperador(null);
+    setPrevNum(0);
+  }
 
-                    <button onClick={operador} value='-'>-</button>
-                    <button value={1}  onClick={addNun}>1</button>
-                    <button value={2}  onClick={addNun}>2</button>
-                    <button value={3}  onClick={addNun}>3</button>
-                    <button onClick={operador} value='+'>+</button>
+  return (
+    <div className="body">
+      <div className="visor">
+        <h1>{num}</h1>
+      </div>
+      <div className="teclas">
+        <div className="base1">
+          <button className="clearBot" onClick={c}>C</button>
+          <button className="corrigeElem" onClick={porcentagem}>%</button>
+          <button onClick={operador} value="/">/</button>
+          <button value={7} onClick={addNum}>7</button>
+          <button value={8} onClick={addNum}>8</button>
+          <button value={9} onClick={addNum}>9</button>
 
-                    <button onClick={mudaConta}>+/-</button>
-                    <button value={0}  onClick={addNun}>0</button>
-                    <button value={"."} onClick={addNun}>,</button>
-                    <button value='=' onClick={calcular}>=</button>
-                </div>
-          
-            </div>
+          <button onClick={operador} value="*">X</button>
+          <button value={4} onClick={addNum}>4</button>
+          <button value={5} onClick={addNum}>5</button>
+          <button value={6} onClick={addNum}>6</button>
 
+          <button onClick={operador} value="-">-</button>
+          <button value={1} onClick={addNum}>1</button>
+          <button value={2} onClick={addNum}>2</button>
+          <button value={3} onClick={addNum}>3</button>
+          <button onClick={operador} value="+">+</button>
+
+          <button onClick={mudaConta}>+/-</button>
+          <button value={0} onClick={addNum}>0</button>
+          <button value={"."} onClick={addNum}>,</button>
+          <button value="=" onClick={calcular}>=</button>
         </div>
-    );
+      </div>
+
+    </div>
+  );
 }
