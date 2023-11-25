@@ -1,20 +1,26 @@
 .body{
     width: 330px;
     margin: 0 auto;
-    border: solid 1px #000;
     font-family: monospace;
+    background-color: lavender;
+    border-radius: 15px;
 }
 h1 {
     margin: 0;
     padding: 0;
 }
 
+
+
 .visor{
-    border: solid 1px red;
     display: flex;
     justify-content: end;
     padding: 10px 15px 10px 15px;
     font-size: 2em;
+    background-color: rgb(196, 196, 196);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 50px;
 }
 
 .teclas {
@@ -23,35 +29,37 @@ h1 {
 }
 
 .base1{
-    width: 80%;
-    border: solid 1px #000;
+    width: 100%;
     padding: 12px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .base2{
     width: 20%;
     padding: 12px;
-    border: solid 1px blue;
-    justify-content: center;
+    justify-content:center;
 }
 
 .clearBot{
     color: red;
+    grid-column: span 2;
+}
+
+.corrigeElem{
+    grid-column: span 1;
 }
 
 .base2 button{
-    width: 100%;;
+    width: 100%;
 }
 
 button{
     font-family:monospace;
-    width: auto;
-    margin: 4px;
-    padding: 18px 20px;
+    margin: 5px;
+    padding: 18px 10px;
     border-radius: 3em;
     font-size: 1.2em;
-    background-color: rgb(228, 235, 228);
+    background-color: rgb(255, 255, 255);
     font-weight: bolder;
     color: #000;
     border: none;
