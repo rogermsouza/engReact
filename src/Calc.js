@@ -115,9 +115,9 @@ export function Calc() {
   return (
     <div>
       <div className="link">
-      <Link to="/">
-        <img src={imgVolta} width="70px" />
-      </Link>
+        <Link to="/">
+          <img src={imgVolta} width="70px" />
+        </Link>
       </div>
       <div className="body">
       <div className="visor">
