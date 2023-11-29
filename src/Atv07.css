@@ -76,3 +76,7 @@ button:hover{
 .operadores:hover{
     background-color: rgb(160, 225, 225);
 }
+
+.link {
+    padding: 15px;
+}

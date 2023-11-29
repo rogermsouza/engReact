@@ -1,61 +1,127 @@
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+var imgVolta =  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy5UN2BUGylCu1nYwAzD-QBTzJGrPUS5dGzQ&usqp=CAU"
 
 export function Calc() {
-  const [num, setNum] = useState(0);
-  const [prevNum, setPrevNum] = useState(0);
-  const [inpoperador, setOperador] = useState();
+  const [screen,setScreen] = useState("0");
+  const [antNum, setantNum] = useState("");
+  const [operadorEnt, setOperador] = useState(null);
+  const [num, setNum] = useState("");
 
-  function addNum(valor) {
-    const inputNum = valor.target.value;
 
-    if (num === 0 || isNaN(num) && inputNum !== "0") {
-      setNum(inputNum);
-    } else {
-      setNum(num + inputNum);
-    }
-  }
-
-  function c(num) {
-    setNum(0);
-  }
   function porcentagem() {
     setNum(num / 100);
+    //ele adiciona uma substring na ariavel screen com o valor e dps tira.
+    setScreen(screen.substring(0,screen.length-String(num).length)+(num/100));
   }
   function mudaConta() {
     if (num > 0) {
       setNum(-num);
+      //ele adiciona uma substring na ariavel screen com o valor e dps tira.
+      setScreen(screen.substring(0,screen.length-String(num).length)+(-num));
     }
     else {
       setNum(-(num));
+      //ele adiciona uma substring na ariavel screen com o valor e dps tira.
+      setScreen(screen.substring(0,screen.length-String(num).length)+(-(num)));
     }
-
-  }
-  function operador(op) {
-    var inpOperador = op.target.value;
-    setOperador(inpOperador);
-    setPrevNum(num);
-    setNum(0);
   }
 
-  function calcular() {
-    if (inpoperador === "/") {
-      setNum((prevNum / parseFloat(num)).toFixed(2));
-    } else if (inpoperador === "*") {
-      setNum((prevNum * parseFloat(num)).toFixed(2));
-    } else if (inpoperador === "+") {
-      setNum((parseFloat(prevNum) + parseFloat(num)).toFixed(2));
-    } else if (inpoperador === "-") {
-      setNum((prevNum - parseFloat(num)).toFixed(2));
-    }
 
+  function igual(){
+    calcular();
     setOperador(null);
-    setPrevNum(0);
+  }
+
+  function c() {
+    setScreen("0");
+    setNum("");
+    setantNum("");
+    setOperador(null);
+  }
+
+
+  function operador(op) {
+    var entrOperador = op.target.value;
+    if(operadorEnt !== null){
+      calcular(entrOperador);
+      setOperador(entrOperador);
+      setNum("");
+    }
+    else{
+      setOperador(entrOperador);
+      if(antNum !== ""){
+        setScreen(antNum+entrOperador);
+      }
+      else{
+        setantNum(num);
+        setScreen(num+entrOperador);
+      }
+      setNum("");
+    }
+  }
+
+
+  function addNum(valor) {
+    const entraNum = valor.target.value;
+    if (screen === "0") {
+      if(entraNum === "."){
+        setScreen("0.");
+        setNum("0.");
+      }
+      else{
+        setScreen(entraNum);
+        setNum(entraNum);
+      }
+
+    } else {
+      if(entraNum === "." && num.includes(".")){
+        return;
+      }
+      else{
+        setScreen(screen + entraNum);
+        setNum(num+entraNum)
+      }
+    }
+  }
+
+
+
+  function calcular(entrOperador="") {
+    const number = Number(num);
+
+    const secondNumber = Number(antNum);
+
+    if (operadorEnt === "/") {
+      const result = String((secondNumber/number).toFixed(2));
+      setScreen(result+entrOperador);
+      setantNum(result);
+    } else if (operadorEnt === "*") {
+      const result = String((secondNumber*number).toFixed(2));
+      setScreen(result+entrOperador);
+      setantNum(result);
+    } else if (operadorEnt === "+") {
+      const result = String(secondNumber+number);
+      setScreen(result+entrOperador);
+      setantNum(result);
+    } else if (operadorEnt === "-") {
+      const result = String(secondNumber-number);
+      setScreen(result+entrOperador);
+      setantNum(result);
+    } 
   }
 
   return (
-    <div className="body">
+    <div>
+      <div className="link">
+      <Link to="/">
+        <img src={imgVolta} width="70px" />
+      </Link>
+      </div>
+      <div className="body">
       <div className="visor">
-        <h1>{num}</h1>
+        <h1>{screen}</h1>
       </div>
       <div className="teclas">
         <div className="base1">
@@ -80,10 +146,11 @@ export function Calc() {
           <button onClick={mudaConta}>+/-</button>
           <button value={0} onClick={addNum}>0</button>
           <button value={"."} onClick={addNum}>,</button>
-          <button value="=" onClick={calcular}>=</button>
+          <button value="=" onClick={()=>igual()}>=</button>
         </div>
       </div>
 
+    </div>
     </div>
   );
 }
