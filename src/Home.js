@@ -31,7 +31,7 @@ const Home = () => {
                         <Link to="/Atv07">Atividade 07 - Calculadora</Link>
                     </li>
                     <li>
-                        <Link to="/Atv08">Atividade 08 - Jogo da Memória</Link>
+                        <Link to="/Atv08">Atividade 08 - Jogo da Memória - em andamento...</Link>
                     </li>
                 </ul>
             </nav>
