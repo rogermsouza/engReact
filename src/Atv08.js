@@ -8,8 +8,12 @@ export default function Carta() {
     <div>
       <div className="card">
         <h1>Jogo da Memória</h1>
+        
         <Cards />
       </div>
+
+
+     
     </div>
   );
 }
