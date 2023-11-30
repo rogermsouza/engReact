@@ -1,18 +1,15 @@
+// Carta.js
 import './Carta.css';
-import { useState, useRef, useEffect } from 'react'
-import Cards from './Carta'
+import React from 'react';
+import Cards from './Carta'; // Certifique-se de que o nome do arquivo é 'Cards.js'
 
-
-function Carta() {
- 
-
+export default function Carta() {
   return (
-    <div className="Carta">
-      <h1>Jogo da Memória</h1>
-      <Cards />
+    <div>
+      <div className="card">
+        <h1>Jogo da Memória</h1>
+        <Cards />
+      </div>
     </div>
   );
 }
-
-
-export default Carta;

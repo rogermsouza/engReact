@@ -1,12 +1,14 @@
 import { useState } from 'react'
 
-export default function Card({ card, index, clickhandler }) {
+// Carta.js
+import React from 'react';
 
-    const cardClassName = card.status ? 'ativa' : ''
- 
-    return (
-      <div className={`card ${card.status}`} onClick={() => clickhandler(index)}>
-        <img src={card.img} alt={card.name} />
-      </div>
-    );
-  }
+export default function Card({ card, index, clickhandler }) {
+  const cardClassName = card && card.status ? card.status : '';
+
+  return (
+    <div className={`card ${cardClassName}`} onClick={() => clickhandler(index)}>
+      {card && card.img && <img src={card.img} alt={card.name} />}
+    </div>
+  );
+}
