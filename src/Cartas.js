@@ -3,19 +3,18 @@ import Card from './Carta'
 
 export default function Cards() {
     const [cards, setCards] = useState([
-        { id: 0, name: 'JavaScript', status: '', img: '/src/imgCartas/javascript.png' },
-    { id: 0, name: 'JavaScript', status: '', img: '/src/imgCartas/javascript.png' },
-    { id: 1, name: 'Next', status: '', img: '/src/imgCartas/nextjs.png' },
-    { id: 1, name: 'Next', status: '', img: '/src/imgCartas/nextjs.png' },
-    { id: 2, name: 'Node', status: '', img: '/src/imgCartas/nodejs.png' },
-    { id: 2, name: 'Node', status: '', img: '/src/imgCartas/nodejs.png' },
-    { id: 3, name: 'React', status: '', img: '/src/imgCartas/reactjs.png' },
-    { id: 3, name: 'React', status: '', img: '/src/imgCartas/reactjs.png' },
-    { id: 4, name: 'TypeScript', status: '', img: '/src/imgCartas/typescript.png' },
-    { id: 4, name: 'TypeScript', status: '', img: '/src/imgCartas/typescript.png' },
-    { id: 5, name: 'ViteJS', status: '', img: '/src/imgCartas/vitejs.png' },
-    { id: 5, name: 'ViteJS', status: '', img: '/src/imgCartas/vitejs.png' },
-
+        { id: 0, name: 'JavaScript', status: '', img: 'imgCartas/javascript.png' },
+    { id: 0, name: 'JavaScript', status: '', img: 'imgCartas/javascript.png' },
+    { id: 1, name: 'Next', status: '', img: 'imgCartas/nextjs.png' },
+    { id: 1, name: 'Next', status: '', img: 'imgCartas/nextjs.png' },
+    { id: 2, name: 'Node', status: '', img: 'imgCartas/nodejs.png' },
+    { id: 2, name: 'Node', status: '', img: 'imgCartas/nodejs.png' },
+    { id: 3, name: 'React', status: '', img: 'imgCartas/reactjs.png' },
+    { id: 3, name: 'React', status: '', img: 'imgCartas/reactjs.png' },
+    { id: 4, name: 'TypeScript', status: '', img: 'imgCartas/typescript.png' },
+    { id: 4, name: 'TypeScript', status: '', img: 'imgCartas/typescript.png' },
+    { id: 5, name: 'ViteJS', status: '', img: 'imgCartas/vitejs.png' },
+    { id: 5, name: 'ViteJS', status: '', img: 'imgCartas/vitejs.png' },
 
     ].sort(() => Math.random() - .5))
 
