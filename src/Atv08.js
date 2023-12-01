@@ -1,7 +1,7 @@
 // Carta.js
 import './Carta.css';
 import React from 'react';
-import Cards from './Carta'; // Certifique-se de que o nome do arquivo é 'Cards.js'
+import Cards from './Cartas'; // Certifique-se de que o nome do arquivo é 'Cards.js'
 
 export default function Carta() {
   return (
