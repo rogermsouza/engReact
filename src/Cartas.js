@@ -4,17 +4,17 @@ import Card from './Carta'
 export default function Cards() {
     const [cards, setCards] = useState([
         { id: 0, name: 'JavaScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/javascript.png' },
-    { id: 0, name: 'JavaScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/javascript.png' },
-    { id: 1, name: 'Next', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nextjs.png' },
-    { id: 1, name: 'Next', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nextjs.png' },
-    { id: 2, name: 'Node', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nodejs.png' },
-    { id: 2, name: 'Node', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nodejs.png' },
-    { id: 3, name: 'React', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/reactjs.png' },
-    { id: 3, name: 'React', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/reactjs.png' },
-    { id: 4, name: 'TypeScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/typescript.png' },
-    { id: 4, name: 'TypeScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/typescript.png' },
-    { id: 5, name: 'ViteJS', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/vitejs.png' },
-    { id: 5, name: 'ViteJS', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/vitejs.png' },
+        { id: 0, name: 'JavaScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/javascript.png' },
+        { id: 1, name: 'Next', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nextjs.png' },
+        { id: 1, name: 'Next', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nextjs.png' },
+        { id: 2, name: 'Node', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nodejs.png' },
+        { id: 2, name: 'Node', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/nodejs.png' },
+        { id: 3, name: 'React', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/reactjs.png' },
+        { id: 3, name: 'React', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/reactjs.png' },
+        { id: 4, name: 'TypeScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/typescript.png' },
+        { id: 4, name: 'TypeScript', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/typescript.png' },
+        { id: 5, name: 'ViteJS', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/vitejs.png' },
+        { id: 5, name: 'ViteJS', status: '', img: 'https://www.sejamobile.com.br/imagens/logos/vitejs.png' },
 
     ].sort(() => Math.random() - .5))
 

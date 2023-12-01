@@ -5,7 +5,7 @@ import Cards from './Cartas'; // Certifique-se de que o nome do arquivo é 'Card
 
 export default function Carta() {
   return (
-    <div>
+    <div className='fundo'>
       <div>
         <h1>Jogo da Memória</h1>
         
